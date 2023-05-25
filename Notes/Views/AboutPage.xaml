@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Notes.Models"
+             x:Class="Notes.Views.AboutPage">
+    <ContentPage.BindingContext>
+        <models:About />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <HorizontalStackLayout Spacing="10">
+            <Image Source="appicon.png"
+                   SemanticProperties.Description="Your-Notes app icon"
+                   HeightRequest="64" />
+            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="Center" />
+            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <Label Text="{Binding Message}" />
+        <Label Text="Or if you are developer and wanna change this app like how you want then click the button 'Source Code'."/>
+        <Button Text="Source Code" TextColor="DodgerBlue" Clicked="SourceCode_Clicked" CornerRadius="10" ImageSource="source_code" BackgroundColor="#282828" />
+        <Label Text="For my other projects click the button 'Github'."/>
+        <Button Text="Github" TextColor="DodgerBlue" Clicked="Github_Clicked" CornerRadius="10" ImageSource="github" BackgroundColor="#282828" />
+        <Label Text="For my cv-portfolio website click the button 'Website'." />
+        <Button Text="Website" TextColor="DodgerBlue" Clicked="Website_Clicked" CornerRadius="10" ImageSource="website" BackgroundColor="#282828" />
+    </VerticalStackLayout>
+
+</ContentPage>
